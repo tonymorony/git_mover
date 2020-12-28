@@ -17,7 +17,7 @@ INPUT: an API endpoint for retrieving data
 OUTPUT: the request object containing the retrieved data for successful requests. If a request fails, False is returnedself.
 '''
 def get_req(url, credentials):
-	r = requests.get(url=url, auth=(credentials['user_name'], credentials['token']), headers={'Content-type': 'application/json'})
+	r = requests.get(url=url, headers={'Authorization': 'token ' + credentials['token']})
 	return r
 
 '''
